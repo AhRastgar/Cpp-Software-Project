@@ -2,6 +2,8 @@
 using namespace std;
 int main ()
 {
+	cout<<"This project is for radius of the circle."<<endl;
+
 	int r;
 	char p=3.14;
 	

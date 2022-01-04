@@ -3,6 +3,8 @@
 using namespace std;
 int main ()
 {
+	cout<<"This project is for pow."<<endl;
+
 	int x;
 	
 	cout<<"Enter a number ";
