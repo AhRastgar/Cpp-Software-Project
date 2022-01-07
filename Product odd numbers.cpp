@@ -1,30 +1,33 @@
 #include <iostream>
 using namespace std;
-int main ()
+
+int main () 
 {
 	/* subtitle */
-	cout<<"This product is for product odd number."<<endl;
-
-	/* variable */
-	int x,y;
+	cout<<"This project is for product odd numbers"<<endl;
+	
+	/* variables */
+	int firstnum, secnum;
+	int prd=1;
 	
 	/* incoming */
-	cout<<"Enter first number ";
-	cin>>x;
+	cout<<"please enter the first number ";
+	cin>>firstnum;
 	
-	cout<<"Enter second number ";
-	cin>>y;
+	cout<<"please enter the second number ";
+	cin>>secnum;
 	
 	/* the operation */
-	if (x%2==1 && y%2==1)
+	for (int i=firstnum; i<=secnum; i++)
 	{
-		/* output */
-		cout<<x*y;
-	}
-	else
-	{
-		cout<<"Erorr";
+		if (i%2==1)
+		{	
+			prd*=i;
+		}
 	}
 	
+	/* output */
+	cout<<prd;
+			
 	return 0;
 }
