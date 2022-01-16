@@ -1,25 +1,40 @@
-#include <conio.h>
 #include <iostream>
-#include <string>
 using namespace std;
-const int n=20;
-//-----------------------------------------------تابع معکوس کردن رشته---------------------------------
-char * ReverseString(char s[],char y[])
+int main ()
 {
-  
-   int k=0;
-   for(int i=strlen(s)-1;i>=0;i--)
-	  { y[k]=s[i];
-        ++k;
-     }
-   y[k]='\0';
-   return y;
+	// subtitle
+	cout<<"This project is for symmetrical number."<<endl;
+	// variables
+	int incomingNum, stashNumMod, incomingNumReverse=0;
+	
+	// incoming
+	cout<<"Enter a number for check symmetrical number ";
+	cin>>incomingNum;
+	
+	// variables
+	int incomingNumStash=incomingNum;
+	
+	// the operations
+	if (incomingNum>0)
+	{
+		while (incomingNum>0)
+		{
+	    	stashNumMod=incomingNum%10;
+	    	incomingNum=incomingNum/10;
+	    	
+			incomingNumReverse=incomingNumReverse*10+stashNumMod;
+		}
+	}
+	
+	// output
+	if (incomingNumStash==incomingNumReverse)
+	{
+    	cout<<"This number is a symmetrical number.";
+	}
+	else
+	{
+    	cout<<"This number isn't a symmetrical number.'";
+	}
+	
+	return 0;
 }
-//------------------------------------------تابع اصلی------------------------
-void main()
-  {
-	  char  s[n]; char y[n];
-	  cin.getline(s,20);
-	  cout<<ReverseString(s,y);
- _getch();
-  }
