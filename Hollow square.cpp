@@ -1,40 +1,44 @@
 #include <iostream>
-#include <conio.h>
 using namespace std;
-
-int main()
+int main() 
 {
 	// subtitle
-	cout << "This project is for draw a circle." << endl;
+	cout << "This project is for draw a hollow square." << endl;
 	
-	// valiables
-	float radius,k;
-	float temp_num = 2;
+	// variable	
+	int side;
+	
+	// variables for loop
+	int i, j, h, z;
 	
 	// incoming
-	cout << " Enter the Radius of the circle size : ";
-	cin >> radius;
+	cout << "Enter a number for side of the square ";
+	cin >> side;
 	
-	// the operation
-	for (int count = - radius; count <= radius; count++)
+	// the operation & output
+	for (i = 0; i < side; i++)
 	{
-		for (int counter = - radius; counter <= radius; counter++)
-		{
-			k = ((count * temp_num)/ radius) * ((count * temp_num)/ radius) + (counter / radius) * (counter / radius);
-			
-			if (k > 0.95 && k < 1.08)
-			{
-				// output
-				cout << "*";
-			}
-			else
-			{
-				cout << " ";
-			}
-		}
-		cout << endl;
+		cout << "* ";
 	}
 	
- return 0;
-
+	cout << endl;
+	
+	for (h = 0; h < side-2; h++)
+	{
+		cout << "*";
+		
+		for (j = 0; j < 2*side-3; j++)
+		{
+			cout << " ";
+		}
+		
+		cout << "*" << endl;
+	}
+	
+	for (z = 0; z < side; z++)
+	{
+		cout << "* ";
+	}
+	
+	return 0;
 }

@@ -1,24 +1,41 @@
 #include <iostream>
+#include <conio.h>
 using namespace std;
-int main ()
+
+int main()
 {
 	// subtitle
-	cout << "This project is for national conditions" << endl;
+	cout << "This project is for draw a circle." << endl;
 	
-	// variables
-	int nationalCode;
+	// variable
+	float radius,k;
 	
-	// incoming
-	cout << "Enter a national code ";
-	cin >> nationalCode;
+	cout << " Enter the Radius of the circle size ";
+	cin >> radius;//get input
 	
+	// variable
+	float temp_num = 2;
+
 	// the operation
-	if (nationalCode == 1111111111 || nationalCode == 2222222222 || nationalCode == 3333333333 || nationalCode == 4444444444 || nationalCode == 5555555555 || nationalCode == 6666666666 || nationalCode == 7777777777 || nationalCode == 8888888888 || nationalCode == 9999999999)
+	for (int count = - radius; count <= radius; count++)
 	{
-		cout << "Erorr";
+		for (int counter = - radius; counter <= radius; counter++)
+		{
+			k = ((count * temp_num)/ radius) * ((count * temp_num)/ radius) + (counter / radius) * (counter / radius);
+			
+			if (k > 0.95 && k < 1.08)
+			{
+				// output
+				cout << "*";
+			}
+			else
+			{
+				cout << " ";
+			}
+		}
+		cout << endl;
 	}
 	
-	
-	
-	return 0;
+ return 0;
+
 }
