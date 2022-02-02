@@ -1,48 +1,40 @@
 #include <iostream>
+#include <conio.h>
 using namespace std;
 
-// function for square
-void square (int lenght)
+int main()
 {
-	// variables
-	int loop1, loop2;
+	// subtitle
+	cout << "This project is for draw a circle." << endl;
+	
+	// valiables
+	float radius,k;
+	float temp_num = 2;
+	
+	// incoming
+	cout << " Enter the Radius of the circle size : ";
+	cin >> radius;
 	
 	// the operation
-	for (loop1 = 1; loop1 <= lenght; loop1++) 
+	for (int count = - radius; count <= radius; count++)
 	{
-		for (loop2 = 1; loop2 <= lenght; loop2++) {
-			if (loop1 == loop2)
+		for (int counter = - radius; counter <= radius; counter++)
+		{
+			k = ((count * temp_num)/ radius) * ((count * temp_num)/ radius) + (counter / radius) * (counter / radius);
+			
+			if (k > 0.95 && k < 1.08)
 			{
-				// output in function
-				cout << "* ";
-			}
-			else if (loop2 == (lenght + 1) - loop1)
-			{
-				cout << "* ";
+				// output
+				cout << "*";
 			}
 			else
 			{
-				cout << "  ";
+				cout << " ";
 			}
 		}
-		
 		cout << endl;
 	}
-
-}
-
-// main function
-int main ()
-{
-	// variables
-	int lenght;
 	
-	// incoming
-	cout << "Please enter the Square Lenght: ";
-	cin >> lenght;
-	
-	// output
-	square(lenght);
+ return 0;
 
-	return 0;
 }
