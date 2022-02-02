@@ -1,42 +1,48 @@
 #include <iostream>
 using namespace std;
-int main ()
+
+// function for square
+void square (int lenght)
 {
-	// subtitle
-	cout << "This project is for hollow square." << endl;
-	
-	// variable
-	int num;
-	
-	// variable for loop
-	int i, j, z, h;
-	
-	// incoming
-	cout << "Enter a number for side of the square ";
-	cin >> num;
+	// variables
+	int loop1, loop2;
 	
 	// the operation
-	for (i = 0; i < num; i++)
+	for (loop1 = 1; loop1 <= lenght; loop1++) 
 	{
-		cout << "* ";
-	}
-	
-	cout << endl;
-	
-	for (j = 0; j < num-2; j++)
-	{
-		cout << "*";
-		for (z = 0; z < 2*num-3; z++)
-		{
-			cout << " ";
+		for (loop2 = 1; loop2 <= lenght; loop2++) {
+			if (loop1 == loop2)
+			{
+				// output in function
+				cout << "* ";
+			}
+			else if (loop2 == (lenght + 1) - loop1)
+			{
+				cout << "* ";
+			}
+			else
+			{
+				cout << "  ";
+			}
 		}
-		cout << "*" << endl;
+		
+		cout << endl;
 	}
+
+}
+
+// main function
+int main ()
+{
+	// variables
+	int lenght;
 	
-	for (h = 0; h < num; h++)
-	{
-		cout << "* ";
-	}
+	// incoming
+	cout << "Please enter the Square Lenght: ";
+	cin >> lenght;
 	
+	// output
+	square(lenght);
+
 	return 0;
 }
